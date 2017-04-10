@@ -1,0 +1,47 @@
+\section{Introduction}
+
+Natural spoken dialog systems are nowadays used daily by millions of users with the recent development of virtual assistants like SIRI, Google Now or Cortana.
+It could be expected that the next generations of these assistants become fully embodied conversational agents,  having the ability to interact verbally and non verbally with users. 
+These systems have nowadays very efficient and reliable speech recognition and synthesis capacities but have only very limited abilities to handle other aspects of user-agent interactions, like the ability to coordinate speaking turns with the users. 
+Indeed to coordinate their speaking turns, the agents use simple rules: never speak at the same time the user is speaking, when the user barges in, interrupt to let the user speak, and take the turn as soon as possible after the user's end of turn. But real conversations are more complex than that, speech overlaps are not so rare and conflictual situations, were both participants wants to have the floor at the same time are also common. Moreover the duration of silences during transitions between two turns are highly variable. 
+Improving the naturalness of user-agent interactions requires to take into account these characteristic of human conversations.
+
+In the context of user-agent interactions, several studies have shown the relevance of varying the way the agents take the turn during the interactions for conveying different personality traits and interpersonal attitude to the user \citep{ter_maat_how_2010,cafaro_effects_2016}. 
+Recent work have shown that part of the variability observed in the duration of transitions in human conversations could come from lower level cognitive processes, linked to the sensorimotor coupling that occurs between participants, but only few models of turn-taking account for this, and none of them have been evaluated in the context of user-agent spoken interactions. 
+Although we do not neglect the contribution of other cognitive processes in the coordination of speaking turns, that may take place at the same time at different interaction levels, 
+%as at other levels of interactions simple reactions \citep{duncan_signals_1972} and projections \citep{sacks_simplest_1974} could occur at the same time, 
+in this article we explore the contribution of sensorimotor coupling between the user and the agent in the coordination of speaking turns and discuss several contributions linked to this question. 
+
+First, we propose a new computational model that endows conversational agents with the capability to coordinate their speaking turns in the context of mixed-initiative dialogs. The simulation of agent-agent interactions highlights the ability of the model to reproduce qualitatively the situations observed in human conversations and reported in the literature. 
+We also show that the model allows the agent to adapt to its environmental settings.
+%by presenting our model and describing its main properties form agent-agent simulations, we want to highlight the ability of our model to make emerge situations that reproduce qualitatively the situations we can observe in human conversations, and we will show that agents controlled by our model display properties of adaptability to the environmnental settings of the agent. 
+More importantly, this adaptability is not due to a process explicitly formulated in the model but is a property that emerges from the interaction. 
+
+Secondly, we show the applicability of our model to handle real human-user interactions. As we mentioned, to our best knowledge, emergent models for user-embodied conversational agents are not common and among these existing models, even less models have been applied to real-time user-agent interactions. As a result, current embodied conversational agent architectures are not fully adapted to the implementations of such kind of models. 
+As a contribution, we propose a computational architecture, inspired from \cite{kopp_architecture_2014} and \cite{thorisson_mind_1999}, that supports the implementation of both evenemential rule-based models and continuous emergent models. 
+
+The third contribution of the article relates to the experimental analysis of real-time interactions where the agent has to coordinate its turns with the user. With this evaluation, we wanted first to analyze the ability of both our agent and the user to coordinates turns. 
+We present the results of an experimentation designed to assess 
+% This encompass verifying 
+that our agent was able to reliably detect the behavior of the user and also to verify that users were able to reliably perceive the behavior of the agent, a prerequisite for the user being able to coordinate efficiently with the agent. We also measured the impact of modulating the way the agent coordinates its turns (interrupting or waiting the user's end of turn) on the user's experience. 
+
+In the remainder of the article, we firstly present existing work on human and user-agent turn-taking, and justify our approach. We then present our theoretical model and describe its properties based on theoretical agent-agent simulations.  Next, we present the architecture we propose to implement the model in the context of real-time user-agent dialog scenarios, making our turn-taking model work together with components dedicated to the interpretation and the generation of verbal utterances. We finally conclude the article by presenting an analysis of real-time interactions between an agent controlled by our model and a user. 
+
+
+% Nous montrons ensuite comment notre modèle permet 
+
+% Agents conversationnels animés : intérêt croissant 
+% Avec le développement rapide des systèmes de dialogues parlés actuels, nous pouvons espérer que dans quelques années, ces interfaces deviennent des objets du quotidien utilisés par des millions d'utilisateur.
+% Ces systèmes sont néanmoins de plus en plus développés en ce qui concerne l'interprétation et la génération d'énoncés mais peinent à assurer d'autres fonctions liées à la gestion du dialogue entre utilisateur et agent. Ceci est vrai notamment en ce qui concerne la gestion du tour de parole.
+% Les systèmes actuels fonctionnent en effet selon une règle simple : ne jamais parler en même temps que l'utilisateur et si ce dernier se met à parler pendant la prononciation d'une phrase, s'interrompre
+% Conversations réelles : beaucoup plus complexes que cela, les chevauchements de parole ne sont pas rares et les situations conflictuelles où les deux participants cherchent à avoir la parole sont fréquentes, sans compter sur le caractère variable des temps de prise de parole des participants.
+% Améliorer la naturalité de ces systèmes de dialogue nécessite de tenir compte de cela
+% Plusieurs études ont montré qu'une part de la variabilité observée dans le cadre de la gestion du tour de parole était due à différents facteurs dont la nature des contributions verbales des participants ou encore les attitudes interpersonnelles entre les participants. 
+% D'autres auteurs récents ont mis en avant qu'une partie de la variabilité observée dans le cadre de la gestion du tour de parole était liée à des processus de plus bas niveau, liée à une coordination sensori-motrice entre les participants. 
+% Il a ainsi été montré une coordination dans les rythmes respiratoires des participants, dans le pitch ou encore des effets d'alignements dans les temps de prise de parole des participants ont été observés. 
+% Peu de travaux sur la conception de modèle de gestion du tour de parole d'agents conversationnels animés ont exploré cette problématique à part entière des interactions humaines, et aucun n'a été appliqué à des scénarios réel de dialogue entre agent et utilisateur.
+% Bien que nous ne néligeons pas la contribution d'autre processus cognitifs dans la coordination de la parole entre utilisateur et agent, nous souhaitons ici aborder la question de la contribution du couplage sensorimoteur dans la coordination de la parole entre utilisateur et agent.
+% Nous proposons ainsi dans cet article, un modèle de coordination de la parole entre utilisateurs et agent en interaction dyadique basé sur un couplage sensorimoteur entre utilisateur et agent.
+% Nous commençons par réaliser un état des lieux des différents travaux sur la coordination de la parole entre utilisateurs et agents et entre humains puis justifions l'utilisation d'approches mettant l'accent sur un couplage sensorimoteur pour la coordination de la parole entre utilisateurs et agents.
+% Nous présentons ensuite notre modèle théoriques en décrivant les principales propriétés émergentes des interactions entre utilisateurs et agents.
+% Nous présentons ensuite l'implémentation de notre modèle puis finissons par présenter une évaluation de notre approche réalisée sur des interactions temps-réel entre utilisateurs et agents.
