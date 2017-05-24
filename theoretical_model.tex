@@ -1,14 +1,5 @@
 \section{Theoretical model}
 \label{mod_pres}
-% ou presenter Warren et DDM : dans background et motivation ? Ici ?
-
-%We now introduce our theoretical model. We remind that 
-%Our goal is to conceive a turn-taking model for an embodied conversational agent engaged in a dyadic interaction with the user, namely a mixed-initiative dialog. 
-%To reach this goal we divided the conception of our model in several steps. We first elaborated our theoretical model based on these assumptions and did a first validation step by comparing the results of agent-agent simulations to real human interactions. Then, we implemented our model in a computational agent architecture and evaluated the behavior of our agent in real-time interactions with the user. 
-
-%In this section we specifically present our theoretical model. We will expose in the next section an analysis of the model properties and the comparison between agent-agent simulations and user-agent simulation, how we implemented our model in a computational agent architecture and how we tested the behavior of our agent in the context of real-time interactions with the user. 
-
-%We begin by introducing our model, starting with the assumptions we made about the behavior of our agent, then describing more in details our theoretical model. 
 
 \subsection{Overall architecture}
 
@@ -45,7 +36,7 @@ $1$ means that the agent has a strong motivation to adopt the opposite role.
 The closer the value of the motivation to $0$ the weaker the strength of the participant to change its role or to keep it. 
 
 The value of the motivation influences, but does not solely determine, the final behavior of the agent in terms of taking, yielding or keeping the turn. The motivation variable represents the goal of the agent towards turn-taking, but the final behavior of the agent is an emergent property of the interaction between the agent and its partner. 
-This principle results from the second loop of interaction in Figure \ref{mot}. 
+This principle results from the second loop of interaction in Figure \ref{fig:mot}. 
 In this loop, the agent begins to vary its own signals regarding turn-taking (for example, decreasing loudness or pitch or gaze towards the user) based on its own goal as conveyed by the motivation variable. Nevertheless, the agent is coupled with its partner, and the signal production of its interlocutor directly influences the way it will vary its own signals.
 Conversely the variation of its own actions will influence the behavior of its partner. 
 As a result, the final behavior of the agent
