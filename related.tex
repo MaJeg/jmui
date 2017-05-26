@@ -149,27 +149,28 @@ to the system. This was either done by analyzing the results of an incremental s
 
 Several authors designed agents producing turn-taking signals to clarify their intentions related to turn-taking. In multi-party conversations between users and virtual agents or robots, several approaches have shown the effectiveness of controlling the agent's gaze behavior to select the future speaker \citep{mutlu_storytelling_2006,bohus_facilitating_2010,al_moubayed_regulating_2015}. In dyadic settings, \citep{skantze_turn-taking_2014} showed that an agent averting its gaze when pausing (but not releasing its turn) helped the user to identify the agent's behavior.
 
-The models presented above are essentially dedicated to the detection of the user's behavior related to turn-taking permitting
-to reduce moments of silence and overlaps, thus improving the quality of the interaction. They partly rely on the initial assumptions made by researchers on
-turn-taking that interrupting or not taking
-the turn after the user's end of turn is a violation
-of the turn-taking system, and could lead to a ``break
-down" in the conversation \citep{cutler_analysis_1986}. Thus in user-agent interactions,
+The models presented above are essentially dedicated to the detection of the user's behavior in order to reduce moments of silence and overlaps, thus improving the quality of the interaction. 
+They partly rely on the initial assumptions made by researchers 
+that interrupting or not taking the turn after the user's end of turn 
+is a violation of the turn-taking system, and could lead to a ``break
+down" in the conversation \citep{cutler_analysis_1986}. 
+Thus in user-agent interactions, 
 the agent is seen as having ``obligations" towards
 taking the turn without leaving a too long silence
-moment and not interrupting the user \citep{de_kok_multimodal_2009}.
+and not interrupting the user \citep{de_kok_multimodal_2009}.
 
 Contrarily, several authors created computational models of
 turn-taking for user-agent or agent-agent interactions
-that varied the turn-taking behavior of the agent based
-on several variables. Selfridge et al. \citep{selfridge_bidding_2009} created a model for a dyadic
+that varied the agent's turn-taking behavior by controlling 
+different variables. 
+Selfridge et al. \citep{selfridge_bidding_2009} created a model for a dyadic
 agent-agent setting, where the motivation of the agents
 to take the turn was mostly driven by the importance
-of the utterance they had to say. To evaluate if they
+of the utterance they had to say. To evaluate whether they
 will take the turn or not, the agents evaluated in parallel
-the importance of the utterance it has or it is saying
+the importance of the utterance they have or they are saying
 and the turn-holding or turn-taking cues displayed to
-judge if they will take the turn or keep the turn. Lessman et al. \citep{lessmann_towards_2004}and \citep{thorisson_multiparty_2010}
+judge whether to take the turn or keep the turn. Lessman et al. \citep{lessmann_towards_2004}and \citep{thorisson_multiparty_2010}
 used both similar notions of ``intention to speak" \citep{lessmann_towards_2004} or
 ``urgency to speak" to drive the behavior of their agent
 \citep{thorisson_multiparty_2010}. Ravenet et al. \citep{ravenet_conversational_2015} created a model where the participants varied
@@ -183,23 +184,25 @@ vary according to these factors.
 
 \subsection{Turn-taking behavior as a continuous process }
 
-The approaches presented above are first steps towards improving the coordination of speaking turns between users and agents. Accurately detecting the behavior of the user is a first step towards improving the coordination of speaking turns between users and agents. More complex approaches allow the agent to vary its turn-taking behavior related to turn-taking by applying "turn-taking strategies" \citep{ter_maat_how_2010} to display attitudes of dominance or power towards the user \citep{ravenet_conversational_2015,cafaro_effects_2016}, vary urgency to speak \citep{selfridge_bidding_2009}.
+The approaches presented above are first steps towards improving the coordination of speaking turns between users and agents. Accurately detecting the behavior of the user is a first step towards improving the coordination of speaking turns. More complex approaches allow the agent to vary its behavior by applying "turn-taking strategies" \citep{ter_maat_how_2010} to display attitudes of dominance or power towards the user \citep{ravenet_conversational_2015,cafaro_effects_2016}. %, vary urgency to speak \citep{selfridge_bidding_2009}.
 
- These approaches share common characteristics, once reached a high degree of certainty about the partner's behavior, they make ponctual decisions about the current behavior to trigger (either taking, yielding, interrupting, keeping the turn) and do not often revise their decision or if they do, revise their decision in a significant amount of time that could be inappropriate regarding timing of turn-taking.
- Contrarily, participants in human interactions continuously perceive and react to their partner's behavior \citep{clancy_co-constructed_2015}. Participants continuously adapt their signals to the behavior of their partner and their final behaviors (either the locutor stop or continue to speak, either the listener take the turn or not) cannot be planned in advance. For example, the current speaker trying to keep the turn can display signals showing the current listener that he wants to keep the turn, then deciding to raise its voice, increasing its speech rate, constantly repeating the last syllable. These behaviors are however not fixed in advance but are continuously dependent of what the listener does, if the listener show insistance in trying to take the turn, the current speaker can choose to insist more and more to keep the turn (for example rising more and more its voice to try to prevent the current listener to take the turn) and then, as the overlap last, the current speaker can finally interrupt itself to let the current listener take the turn.  
- A similar observation can be made to the listener engaged in a conflict for taking the turn, he can more and more insist on its turn-taking signals, to try to take the turn.
- Behaviors of the participants are then highly dynamic, continuously evolving through the interaction, and directly dependant of the signal production of their partner. In that sense, turn-taking behaviors can't be entirely determined by the agent, but is a result of an initial goal (taking, yielding, keeping the turn), and a continuous adaptation to the partner's actions. Actual models lack explaining how participants can smoothly coordinate their turn by continuously adapting to their partner's signals.  
+These approaches share common characteristics. Once reached a high degree of certainty about the partner's behavior, agents make punctual decisions about the current behavior to trigger (either taking, yielding, interrupting, keeping the turn) and do not often revise their decision or, if they do, revise their decision after a significant amount of time that could be inappropriate with respect to the timing of turn-taking.
+On the contrary, participants in human interactions continuously perceive and react to their partner's behavior \citep{clancy_co-constructed_2015}. Indeed, participants continuously adapt their signals production to the behavior of their partner and their final behaviors (either the speaker stops or continues to speak, either the listener takes the turn or not) cannot be planned in advance. For example, the current speaker trying to keep the turn can display signals showing the current listener that he wants to keep the turn, then deciding to raise its voice, increasing his speech rate, constantly repeating the last syllable. These behaviors are however not fixed in advance but are continuously dependent of what the listener is doing: if the listener show insistance in trying to take the turn, the current speaker can choose to insist more and more to keep the turn (for example rising more and more its voice to try to prevent the current listener to take the turn) and then, as the overlap lasts, the current speaker can finally interrupt itself to let the current listener taking the turn.  
+A similar observation can be made for the listener engaged in a conflict for taking the turn: he can amplify his turn-taking signals, to try to take the turn.
+ Behaviors of the participants are then highly dynamic, continuously evolving through the interaction, and directly dependent to the signals production of their partner. In that sense, turn-taking behaviors can't be entirely determined by the agent, but is a result of an initial goal (taking, yielding, keeping the turn), and a continuous adaptation to the partner's actions. Existing models lack explaining how participants can smoothly coordinate their turn by continuously adapting to their partner's signals.  
  
- Moreover, as observed by \cite{thorisson_natural_2002}, participants coordinating their turns are under temporal constraints, they act whether or not they are completely certain about the intentions of their partners towards turn-taking, that is, whether their partners is trying to change role (from listener to speaker or conversely) or not. That can be the case for example, for a listener waiting the end of the current speaker's turn to take the turn, even if he is not completely certain about the nature of the speaker's silence (whether he is only pausing or if he ended its turn) as the silence last, he will certainly finish by acting towards taking the turn.
+Moreover, as observed by \cite{thorisson_natural_2002}, participants coordinating their turns are under temporal constraints, they act whether or not they are completely certain about the intentions of their partners towards turn-taking, that is, whether their partners is trying to change role (from listener to speaker or conversely) or not. That can be the case for example, for a listener waiting the end of the current speaker's turn to take the turn, even if he is not completely certain about the nature of the speaker's silence (whether he is only pausing or if he has ended its turn) as the silence last, he will certainly finish by acting towards taking the turn.
  	
- These two characteristics, continuous adaptations to the partner's behavior and action under uncertainty are not new in the field of embodied conversational agents. Recent works have promoted the need for agents able to incrementally perceive the user's behavior and react to it before the end of its behavior. These kind of models have been applied to the management of dialog between user and agent \cite{skantze_towards_2010}, or backchannel eliciting behaviors \cite{buschmeier_when_2014}. For developing agents that are able to incrementally process and react to the user's behavior, \cite{kopp_architecture_2014} have proposed the ASAP architecture, extending the SAIBA architecture by adding ability to continuously perceive the behavior of the user an adapt the ongoing behavior of the agent accordingly. 
+ These two characteristics, continuous adaptation to the partner's behavior and action under uncertainty, are not new in the field of embodied conversational agents. Recent works have promoted the need for agents able to incrementally perceive the user's behavior and to react to it before the end of the user's behavior. These kind of models have been applied to the management of dialog between user and agent \cite{skantze_towards_2010}, or backchannel eliciting behaviors \cite{buschmeier_when_2014}. For developing agents that are able to incrementally process and react to the user's behavior, \cite{kopp_architecture_2014} have proposed the ASAP architecture, extending the SAIBA architecture by adding ability to continuously perceive the behavior of the user an to adapt the ongoing behavior of the agent accordingly. 
  
- Nevertheless, to our knowledge, no model have applied this principle of continuous perception and action to turn-taking, our aim is to create such a model. 
+ Nevertheless, to our best knowledge, no model has applied this principle of continuous perception and action to turn-taking, our aim was to create such a model. 
+
+\subsection{Positioning}
 
 We propose a generative model of turn-taking motivated both by cognitive psychology models and by studies
 that have measured alignment or synchrony effects without postulating the nature of the cognitive process
 behind these phenomena. This model is based on general cognitive psychology theory that describes the
-processes behind the continuous sensori-motor coupling existing between participants in interactions and that
+processes behind the continuous sensori-motor coupling existing between participants in interaction and that
 drive the agent's behavior.
 
 % Plusieurs travaux ont étudié le couplage continu existant entre des participants dans une interaction entre des participants humains : 
@@ -209,23 +212,27 @@ drive the agent's behavior.
 %	Ces approches appartiennent à une approche dite d'approche de dynamique de la cognition. L'objectif est d'expliquer comment la 
 
 
-Several authors have taken the perspective of a dynamic approach to cognition as conceptualized by Kelso \cite{kelso_coordination_2009} or Warren \citep{warren_dynamics_2006} to model coordination phenomenon, such as coordination of oscillating
-members by \citep{haken_theoretical_1985}, locomotion of pedestrians trying to avoid each other \citep{rio_follow_2014} or in human conversations, coordination of postures \citep{fowler_language_2008} .
-\citep{rio_follow_2014} used the behavioral dynamics theory as conceptualized by \citep{warren_dynamics_2006} in their computational model of the coordinated motions of pedestrians. The behavioral dynamics framework formulates the control of action by a set of dynamical systems, taking the form of differential equations with control variables that vary in real-time due to the variation of the information provided by the environment.
-By precisely defining behavior as a set of
-dynamical system, it provides strong principles for the
-implementation of computational models derived from the strong theorical principles of these models. 
-We then used the behavioral dynamics framework to formulate our model, nevertheless, behavior dynamics do not explain how participants control their actions while being themselves uncertain about their partner's behavior. 
+Several authors have taken the perspective of a dynamic approach of cognition, as conceptualized by Kelso \cite{kelso_coordination_2009} or Warren \citep{warren_dynamics_2006} to model different coordination phenomena, such as 
+the coordination of oscillating members by \citep{haken_theoretical_1985}, 
+the locomotion of pedestrians trying to avoid each other \citep{rio_follow_2014} or, 
+for human conversations,the coordination of postures \citep{fowler_language_2008}.
+\citep{rio_follow_2014} used the behavioral dynamics theory conceptualized by \citep{warren_dynamics_2006} in their computational model of the coordinated motions of pedestrians. The behavioral dynamics framework formulates the control of action by a set of dynamical systems, taking the form of differential equations with control variables that vary in real-time due to the variation of the information provided by the environment.
+By precisely defining behavior as a set of dynamical systems, it provides strong principles for the
+implementation of computational models derived from the theoretical principles of these models. 
+We then used the behavioral dynamics framework to formulate our model. 
+Nevertheless, behavior dynamics does not explain how participants control 
+their actions while being themselves uncertain about their partner's behavior. 
 
-When perceiving their partner's current behavior, the agents are involved in a perceptual task, based on the variations of the signal produced by their partners. Being the current speaker, the agent has to discriminate between two alternatives: is the current listener about to take the take the turn or not? Symmetrically, being the current listener, the agents has to determine whether the speaker is about to yield or to keep the floor. The agent's decision is based on the variation of the signals produced by the other agents during the interaction that the agent can more or less likely perceive.
+When perceiving their partner's current behavior, the agents are involved in a perceptual decision-making task, based on the perception of the variations of the signals produced by their partners. Being the current speaker, the agent has to discriminate between two alternatives: is the current listener about to take the take the turn or not? Symmetrically, being the current listener, the agent has to determine whether the speaker is about to yield or to keep the floor. The agent's decision is based on the variation of the signals produced by the other agents during the interaction that the agent can more or less likely perceive.
 
 These conditions of uncertainty and dynamic choice between two alternatives follow the Two Alternative Forced Choice task paradigm (TAFC). This paradigm is extensively used in cognitive psychology to account for
 the dynamics of perceptual decision-making of human agents, which have to discriminate the nature of the
-stimuli they have in front of them to make a decision \citep{bogacz_physics_2006}. While several models of two alternative forced choice tasks have been created (see \citep{bogacz_physics_2006} for a review), one of the most widely used and simplest models is the drift diffusion model elaborated by Ratcliff \citep{ratcliff_theory_1978}. 
-We chose to use the drift diffusion model to explain how our agent will perceive the behavior of its partners based on the multimodal signals displayed by the latter. 
+stimuli they have in front of them to make a decision \citep{bogacz_physics_2006}. While several models of two alternative forced choice tasks have been created (see \citep{bogacz_physics_2006} for a review), one of the most widely used and simplest model is the drift diffusion model (DDM) elaborated by Ratcliff \citep{ratcliff_theory_1978}. 
+We chose to use this model to control how our agent perceives the behavior of its partners based on the multimodal signals displayed by the latter. 
 %Remains the question of the agent's degree of certainty influence the production of its signals. Does the participant wait to be be certain its partner's behavior to modify its own production of actions, or does the participant continuously modulate its own signal production according to its uncertainty degree about its partner's beahvior ?
 % \citep{lepora_embodied_2015} specifically studied the action dynamics of human participants that were
 %asked to select an answer to a question by moving the cursor of their mouse to the button corresponding to the right answer. They showed that a model where the agent's action was continuously modulated by its uncertainty better reproduced human action trajectories.
+
  We postulate that a principle of perception and action in parallel is put in action for the coordination
 of turns in human conversations. We assume that the agents are continuously perceiving the multimodal signals
 produced by their partners, and that they modulate in parallel their own actions (verbal and nonverbal
@@ -234,6 +241,7 @@ In turn, by modulating their own productions, the agents can early produce signa
 their partners and that can push the latter to modulate their own signals, according to their current goal
 (taking or yielding the turn). This strong sensorimotor coupling may provoke the beginning of turn, or the end
 of turn, earlier than if the agent would simply passively interpreted the signals of its partner without acting in
-parallel. What we described here is no more less than a tight coordination that takes place between the agents,
-that could partly explain the smooth transitions observed in human interactions. We present our model in
-the next section and we will show how principles of continuous adaptation of the agent's behavior towards turn-taking permit to obtain interesting features of turn-taking like automatic adaptation of the agent's behavior to its partner and to the environmental conditions. 
+parallel. 
+The result is a tight coordination between the agents, that could partly explain the different turn-taking patterns observed in human interactions. 
+%What we described here is no more than a tight coordination that takes place between the agents, that could partly explain the smooth transitions observed in human interactions. 
+%We present our model in the next section and we will show how principles of continuous adaptation of the agent's behavior towards turn-taking permit to obtain interesting features of turn-taking like automatic adaptation of the agent's behavior to its partner and to the environmental conditions. 
