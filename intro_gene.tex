@@ -1,4 +1,5 @@
 \section{Introduction}
+\label{sec:intro}
 
 % Plan de l'article refait : 
 %	- Définition du contexte : 
@@ -18,38 +19,38 @@
 % Nous cherchons à montrer que ce modèle améliore l'interaction de deux manières, en améliorant le caractère complexe en proposant un répertoire comportemental beaucoup plus important, et en améliorant le seamlessness de l'interaction entre l'agent et l'utilisateur par les capacités d'adaptation continues que l'agent a
 
 
+According to Cassell et al. \cite{cassell_embodiment_1999}, embodied conversational agents are graphical entities able to interact naturally with users by producing and interpreting natural spoken language, co-verbal and nonverbal signals such as prosody, gestures, facial expressions, gaze. 
+To ensure natural interactions with the user, embodied conversational agents should have the ability to manage conversational functions such as turn-taking \citep{cassell_embodiment_1999}. Turn-taking refers to the ability of conversants to alternate speaking turns, such as, most often, only one participant speaks at a time \citep{sacks_simplest_1974}. Turn-taking encompasses two major abilities, the ability to seamlessly exchange turns by correctly interpreting the signals produced by the participants just before the end of the turn
+%efficiently anticipating when the current speaker will finish its turn 
+and the ability to repair conflicting situations where both participants try to have the turn at the same time \citep{thorisson_natural_2002}. 
 
+Several authors have contributed to endow conversational agents with natural turn-taking behaviors \citep{thorisson_natural_2002,raux_optimizing_2012,jonsdottir_distributed_2013}. However, user-agent turn-taking is still non-natural, far from what can be observed in human conversations. Indeed, agent's decisions towards turn-taking are often controlled by simple rules: never speak at the same time the user is speaking, when the user barges in, stop speaking to let the user speak, and take the turn as soon as possible after the user's end of turn \citep{ter_maat_how_2010}. Real conversations are more complex: short speech overlaps are not so rare and conflictual situations, where both participants wants to have the floor at the same time are also common. Moreover the durations of silence between two turns are highly variable. This large variety of situations comes from different conversational factors, such as the interpersonal attitudes of the participants, their personality traits \citep{ter_maat_how_2010} or the type of verbal contributions produced by the agents \citep{cafaro_effects_2016}. However, only few turn-taking models have taken into account these factors \citep{lessmann_towards_2004,ravenet_conversational_2015}.
+%Moreover, these limitations come from the perceive-decide-act paradigm used in these models: agents make punctual decisions about how to behave regarding turn-taking after having gathered sufficient informations about the user's behavior. It results in long response latencies of the agent and poor abilities to repair conflicting situations. 
 
-% Turn-taking dans les
+%We argue that, in order to achieve seamlessness in user-agent interactions, agent behavior towards turn-taking should not be the result of punctual decisions based on simple rules, but an emergent result of a continuous mutual influence between participants. 
 
-% Deux à trois questions de recherche à caser : 
-%	- Perception et réaction en continu aux actions de l'utilisateur
-%	- Habituellement, le comportement des agents est rule-based 
+In this article, we propose a computational model that makes a conversational agent able to coordinate its speaking turns with the user in the context of mixed-initiative dialogs. 
+We argue that the ability for the agent to exhibit natural turn-taking behaviors in this context requires that the agent is able to perceive, decide and act continuously and thus concurrently. 
+Our proposal is grounded in the behavioral dynamic theory promoted by Warren \cite{warren_dynamics_2006} that leads us to assume that the exchanges of turns are not under the control of one single participant, but result in their sensory-motor coupling: both participants are continuously adapting their production of verbal and nonverbal signals, according to the current behavior of their partner. Therefore the coordination of the speaking turns is an emergent property of the interaction, in the sense of \cite{warren_dynamics_2006}. 
 
-% Idée de perception-action en continu : 
-
-
-
-
-
-
-According to Cassell et al. \cite{cassell_embodiment_1999}, embodied conversational agents are graphical entities that are able to interact naturally with users by producing and interpreting natural spoken language, co-verbal and nonverbal signals such as prosody, gestures, facial expressions, gaze. 
-To ensure the most natural interaction with the user, embodied conversational agents should be endowed with the ability to manage conversational functions such as turn-taking \citep{cassell_embodiment_1999}. Turn-taking refers to the ability of conversants to alternate turns speaking, such as, most of the time, only one participant speak \citep{sacks_simplest_1974}. Turn-taking encompass two major abilities, the ability to seamlessly exchange turns by correctly anticipating when the current speaker will finish its turn and the ability to repair conflicting situations where both participants try to have the turn at the same time \citep{thorisson_natural_2002}. 
-Several authors have succeeded in endowing conversational agents with more and more natural turn-taking \citep{thorisson_natural_2002,raux_optimizing_2012,jonsdottir_distributed_2013}. However, user-agent turn-taking is still non-natural far from what is observed in human conversations. First, agent's decisions towards turn-taking is done by simple rules : never speak at the same time the user is speaking, when the user barges in, stop speaking to let the user speak, and take the turn as soon as possible after the user's end of turn \citep{ter_maat_how_2010}. Real conversations are more complex: speech overlaps are not so rare and conflictual situations, where both participants wants to have the floor at the same time are also common. Moreover the duration of silences during transitions between two turns are highly variable. Such variability in these situations comes from different conversational factors, such as the interpersonal attitudes between participants, personality traits \citep{ter_maat_how_2010} or the type of verbal contributions produced by the agents \citep{cafaro_effects_2016}. However, only few turn-taking models have taken into account these factors \citep{lessmann_towards_2004,ravenet_conversational_2015}.
-Moreover, these limitations come from the perceive-decide-act paradigm used in these models : agents make ponctual decisions about how to behave regarding turn-taking after having gathered sufficient informations about the user's behavior. This results in long response latencies of the agent and poor abilities to repair conflicting situations. We argue that, in order to achieve seamlessness in user-agent interactions, agent behavior towards turn-taking should not be the result of ponctual decisions based on simple rules, but an emergent result of a continuous mutual influence between participants. 
-
-In this article, we propose a new computational model that endows conversational agents with the capability to coordinate their speaking turns in the context of mixed-initiative dialogs. The simulation of agent-agent interactions highlights the ability of the model to reproduce qualitatively the situations observed during human conversations and reported in the literature. 
-We also show that the model allows the agent to adapt to its environmental setting.
+%The simulation of agent-agent interactions highlights the ability of the model to reproduce qualitatively situations observed during human conversations and reported in the literature. 
+%We also show that the model allows the agent to adapt to its environmental setting.
 %by presenting our model and describing its main properties form agent-agent simulations, we want to highlight the ability of our model to make emerge situations that reproduce qualitatively the situations we can observe in human conversations, and we will show that agents controlled by our model display properties of adaptability to the environmnental settings of the agent. 
-More importantly, this adaptability is not due to a process explicitly formulated in our model but is a property that emerges from the interaction. 
+%More importantly, this adaptability is not due to a process explicitly formulated in our model but is a property that emerges from the interaction. 
 
-We then show the applicability of the model to handle real user-agent interactions. To our best knowledge, emergent models for user-embodied conversational agents are not common and among these existing models, even less models have been applied to real-time user-agent interactions. As a result, current embodied conversational agent architectures are not fully adapted to the implementations of such kind of models. 
-As a contribution, we propose a computational architecture, inspired from \cite{kopp_architecture_2014} and \cite{thorisson_mind_1999}, that supports the implementation of both evenemential rule-based models and continuous emergent models. 
+%We then show the applicability of the model to handle real user-agent interactions. To our best knowledge, emergent models for user-embodied conversational agents are not common and among these existing models, even less models have been applied to real-time user-agent interactions. As a result, current embodied conversational agent architectures are not fully adapted to the implementations of such kind of models. 
+%As a contribution, we propose a computational architecture, named BeAware, inspired from \cite{kopp_architecture_2014} and \cite{thorisson_mind_1999}, that supports the implementation of both event-driven rule-based models and continuous emergent models. 
 
-Finally we conduct an experimental analysis of real-time interactions where the agent has to coordinate its turns with the user. This evaluation aimed at analyzing the ability of both our agent and the user to coordinates their turns. 
-We measured the impact of modulating the way the agent coordinates its turns (interrupting or waiting the user's end of turn) on the user's experience. 
+%Finally we present the results of an experimental analysis of real-time interactions where the agent had to coordinate its turns with the user.
 %We present the results of an experimentation designed to assess 
 % This encompass verifying 
 %that our agent was able to reliably detect the behavior of the user and also to verify that users were able to reliably perceive the behavior of the agent, a prerequisite for the user being able to coordinate efficiently with the agent. We also measured the impact of modulating the way the agent coordinates its turns (interrupting or waiting the user's end of turn) on the user's experience. 
 
-In the remainder of the article, we firstly present existing work on human and user-agent turn-taking, and justify our approach. We then present our theoretical model and describe its properties based on theoretical agent-agent simulations.  Next, we present the architecture we propose to implement the model in the context of real-time user-agent dialogs, making our turn-taking model work together with components dedicated to the interpretation and the generation of verbal utterances. We finally conclude the article by analysing real-time interactions between an agent controlled by our model and a user. 
+In the remainder of the article, we firstly present existing work on human and user-agent turn-taking, and justify our approach. 
+We then present our theoretical model and describe its properties based on theoretical agent-agent simulations. These simulations highlight the ability of the model to reproduce qualitatively situations observed during human conversations. 
+We also show that the model allows the agent to adapt to its environmental setting and, more importantly, that this adaptability is not due to a process explicitly formulated in our model but is a property that emerges from the interaction. 
+%by presenting our model and describing its main properties form agent-agent simulations, we want to highlight the ability of our model to make emerge situations that reproduce qualitatively the situations we can observe in human conversations, and we will show that agents controlled by our model display properties of adaptability to the environmnental settings of the agent. 
+Next, we present BeAware, the computational architecture we propose to implement the model in the context of real-time user-agent dialogs, making our turn-taking model work together with components dedicated to the interpretation and the generation of verbal utterances. The solution, which is based on ASAP \cite{kopp_architecture_2014} and implements some principles of Ymir \cite{thorisson_mind_1999}, supports the implementation of both event-driven rule-based models and continuous emergent models. 
+We finally conclude the article by analysing real-time interactions between an agent controlled by our model and a user. 
+ This evaluation aimed at analyzing the ability of both our agent and the user to coordinates their turns. 
+%We measured the impact of modulating the way the agent coordinates its turns (interrupting or waiting the user's end of turn) on the user's experience. 

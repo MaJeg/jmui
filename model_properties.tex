@@ -174,21 +174,22 @@ In the previous section, we analysed the dynamics of the state variable $\gamma$
   \label{tab_scenarios_emergence}
 \end{table}
 
-In scenario S3, the current speaker had a strong motivation to yield the turn and the current listener a strong motivation to take the turn. Figures \ref{simu_smooth} shows how the agents modulated their verbal and non verbal signal productions (here the loudness and the pitch of their voice, and their gaze direction). Figure \ref{smooth_acc} shows the dynamic of the perceptual decision-making process. As one could expect, the model led to a short non conflicting overlap, in the terms given by \citep{schegloff_overlapping_2000}. 
-
-\begin{figure}
+\begin{figure}[b]
   \centering
   \includegraphics[width=\linewidth]{figure/smooth-transition_signal-production.pdf}
   \caption{Modulation of the verbal and non verbal signals produced by the two agents. The resulting behavior is a smooth transition of the turn from the current speaker to the current listener. Scenario S3} 
   \label{simu_smooth}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[t]
   \centering
-  \includegraphics[width=\linewidth]{figure/smooth-transition_accumulation.pdf}
+  \includegraphics[width=\linewidth]{figure/smooth-transition_accumulation_small.pdf}
   \caption{Time series of the accumulation values $\gamma$ for the two agents. Scenario S3.}
   \label{smooth_acc}
 \end{figure}
+
+
+In scenario S3, the current speaker had a strong motivation to yield the turn and the current listener a strong motivation to take the turn. Figures \ref{simu_smooth} shows how the agents modulated their verbal and non verbal signal productions (here the loudness and the pitch of their voice, and their gaze direction). Figure \ref{smooth_acc} shows the dynamic of the perceptual decision-making process. As one could expect, the model led to a short non conflicting overlap, in the terms given by \citep{schegloff_overlapping_2000}. 
 
 Scenario S4 shown that if we modify the current speaker's motivation, we impact the behavior of the two agents. In S4, the current speaker had a strong motivation to go on speaking and the current listener a strong motivation to take the turn. The result of this simulation is shown on Figure \ref{simu_interruption} and  Figure \ref{inter_acc}. In this situation, the model reproduced a conflicting overlap, which ended by the initial listener holding the floor.  
 
@@ -201,7 +202,7 @@ Scenario S4 shown that if we modify the current speaker's motivation, we impact 
 
 \begin{figure}
   \centering
-  \includegraphics[width=\linewidth]{figure/acc_sc1.pdf}
+  \includegraphics[width=\linewidth]{figure/acc_sc4_small.pdf}
   \caption{Time series of the accumulation values $\gamma$ for the two agents. Scenario S4.}
   \label{inter_acc}
 \end{figure}
@@ -219,7 +220,7 @@ If we now keep the same motivation value for the current speaker but we diminish
 
 \begin{figure}
   \centering
-  \includegraphics[width=\linewidth]{figure/acc_sc2.pdf}
+  \includegraphics[width=\linewidth]{figure/acc_sc2_small.pdf}
   \caption{Time series of the accumulation values $\gamma$ for the two agents. Scenario S5.}
   \label{acc_buttin}
 \end{figure}
