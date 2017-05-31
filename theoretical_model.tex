@@ -78,7 +78,7 @@ We will now introduce in details our theoretical model, which is divided in two 
 
 This component accounts for the dynamics of the decision-making. The underlying cognitive process is a perceptual decision-making task. The agent continuously perceives the variations of the signals produced by the user during the interaction, and continuously evaluates its certainty about the willingness of the user to be the next speaker (or listener). This degree of certainty is represented by an accumulation variable (see Figure \ref{fig:mod-comp}).
 The user behavior perception component follows the paradigm of Two Alternative Forced Choice tasks (TAFC), for which different solutions have been proposed in order to model the timing of the decision making process (see \citep{bogacz_physics_2006} for a review). 
-The Drift Diffusion Model (DDM) has been one of the mostly. It has shown its ability to predict the time required by a human subject to accurately discriminate the nature of the information it can perceive. 
+The Drift Diffusion Model (DDM) has shown its ability to predict the time required by a human subject to accurately discriminate the nature of the information it can perceive for a lot of tasks requiring perceptual decision-making. 
 Interestingly the DDM have been used both in settings where the stimuli presented to the subject remained the same over the course of the decision-making process and settings where the stimuli varied \cite{ratcliff_note_1980}. This model conceptualizes the dynamics of the agent's decision-making as a stochastic process driven by the following equation:
 
 \begin{equation}
@@ -94,7 +94,7 @@ When $\gamma(t)>0$, the higher its value, the more the agent is certain about it
 When $\gamma(t)<0$, a high absolute value means that the agent is very certain that its partner actually wants to keep its current role. 
 
 The ongoing decision-making process ends when $\gamma(t)$ crosses a threshold $\theta_{\gamma}^{\pm}$. $\gamma(t)$ is then set to 0 and a new decision making process starts.
-$\gamma(t) \geq theta_{\gamma}^{+}$ means that the agent is certain that its partner has switch to the opposite role and the agent changes its behavior accordingly (defined by the component responsible for the control of signals). $\gamma(t) \leq theta_{\gamma}^{-}$ means that the signals it can perceive indicate that its partner wants to keep its current role. 
+$\gamma(t) \geq \theta_{\gamma}^{+}$ means that the agent is certain that its partner has switch to the opposite role and the agent changes its behavior accordingly (defined by the component responsible for the control of signals). $\gamma(t) \leq \theta_{\gamma}^{-}$ means that the signals it can perceive indicate that its partner wants to keep its current role. 
 %When $\gamma(t)>0$, the agent is more or less certain about the fact that its partner wants to change role, that is, if the partner is giving or yielding the turn. When  $\gamma(t)<0$, the agent is more or less certain about the fact that its partner wants to change role. 
 
 %When $\gamma(t)$ crosses a threshold $\theta_{\gamma}^{\pm}$, favoring one or the other alternative, it means that the agent becomes certain about the nature of the behavior of its partner, either the partner changes role $\theta_{\gamma}^{+}$ or keep its current role $\theta_{\gamma}^{-}$. When the accumulation value crosses the threshold $\theta_{\gamma}^{+}$, the agent changes its own role. As a consequence, the agent activates the corresponding behavior (defined by the component responsible for the control of signals) and initialize a new perceptual decision-making task, corresponding to its newly adopted role.
@@ -124,11 +124,10 @@ In this simulated interaction, the agent was the current speaker and the user th
 %The user is initiating some gesticulations, slowly increasing their speed over time, then 
 The user averted its gaze after 750~ms and started to speak at $t=1~s$. %take the turn at about 1~s. 
 Figures \ref{fig-volume-user1}, \ref{fig-pitch-user1} and \ref{fig-gaze-user1} illustrate the variations of the simulated user's signal production, as perceived by the agent. 
-We forced the agent to never leave the turn (its motivation to keep the turn was constant and maximal $m = -1$).
 %varies his signals as presented in figure \ref{part_actions}. It represents a user beginning to initiate gesticulations 
 Figure \ref{acc_example} illustrates the resulting dynamics of the perceptual decision-making process. 
 %In this scenario, the agent is the current speaker and a simulated user tries to take the turn by varying its signals according to figure \ref{part_actions}. 
-The curve at the top is the evolution of the accumulation rate over time, $\frac{d\gamma(t)}{dt}$ and the curve at the bottom the evolution of the accumulation value $\gamma(t)$. 
+The curve at the top is the evolution of the accumulation rate over time, $\alpha(t)$ and the curve at the bottom the evolution of the accumulation value $\gamma(t)$. In these scenarios, the second term $c \times \frac{dW}{dt}$ has been set to 0 that the accumulation process in this example has no noise. 
 
 % TODO: subfigures
 
@@ -170,16 +169,15 @@ The curve at the top is the evolution of the accumulation rate over time, $\frac
 
 At the beginning of the scenario, the user did not produce any turn-taking signals, thus $\gamma(t)$ was decreasing, meaning that the agent was getting more and more confident about the user's intention to not claiming the turn. 
 
-At $t=0.75~\text{s}$, the agent started to get some information about the user's willingness to take the turn (gaze avertion), thus the accumulation rate was positive. 
+At $t=0.75~\text{s}$, the agent started to get some information about the user's willingness to take the turn (gaze aversion), thus the accumulation rate was positive. 
 As soon as the user produced an additional turn-taking signal (starting to speak, resulting in a sudden increase in the pitch and volume of his voice), the accumulation rate raised to a higher value. 
-After $=1.2~\text{s}$, the user's direction of gaze led the user to believe that the user did not want to take the turn, in contradiction with the information provided at the same time by the verbal channel (the user was actually speaking). Therefore the accumulation rate has fallen to an intermediate positive value. 
+After $=1.2~\text{s}$, the user's gaze direction led the agent to believe that the user did not want to become speaker, in contradiction with the information provided at the same time by the verbal channel (the user was actually speaking). Therefore the accumulation rate has fallen to an intermediate positive value. 
 As a result, the agent accumulated information about the user's intention to effectively take the turn and $\gamma(t)$ reached the positive threshold ($\theta_{\gamma}^{+}=1$), leading it to be certain about the user's behavior. At this point ($t=4~\text{s}$), the agent made a definitive decision and it reset its perceptual decision-making process. 
-Nevertheless, because the agent did not want to let the user taking the turn, it kept its current role, namely being the speaker. 
 
 % As the user only and slightly increases its gesture production at the beginning, the accumulation value decreases towards the negative threshold $\theta_{\gamma}^{-}=-1$. 
 % Then, as the user increases its gesture production and look away from the agent after approximately 750 ms, the accumulation rate varies to a positive value, but close to $0$, that results in an accumulation value that slightly increases, after which the user begins to speak after 1.1s. This sudden variation of the prosody descriptors strongly increases the accumulation rate, then the accumulation value rapidly converges towards the value $\theta_{\gamma}^{+}=1$, meaning that the agent is certain that the user is taking the turn. 
 
-The  difference in the dynamics of the perceptual decision-making process, before and after $t=1.1~\text{s}$, illustrates the principle of additivity of the perceptual decision-making process, captured by Equation \ref{alpha_func}: the more signals the user produces
+The  difference in the dynamics of the perceptual decision-making process, before and after $t=1~\text{s}$, illustrates the principle of additivity of the perceptual decision-making process, captured by Equation \ref{alpha_func}: the more signals the user produces
 %The more the user produces signals,   
  the higher the accumulation rate and the faster the agent detects that the user is taking the turn. This additivity of the perceptual process has been reported for human conversations \citep{gravano_turn-taking_2011,hjalmarsson_additive_2011}. 
 
@@ -195,7 +193,7 @@ Following the principles of the behavioral dynamics formulated by \citep{warren_
 
 $a_j(t)$ representing the current value of signal $j$, ($\ddot{a_j}(t)$ being the second derivative of the signal), $-b$ a damping term representing the intrinsic inertia of the agent to vary its signals, and $k_g\times(a_j(t)-f(m,\gamma))$ defining the value towards which the agent's signal is converging. In our theoretical model, each signal variable $a_j(t)$ is normalized within $ [0.0,1.0] $, $0.0$ representing the minimal value of the signal (no-signal or baseline), and $1.0$ the maximal value of the signal. The way these theoretical values are translated into realistic physical values depends on the nature of the signal and on the actuator used to execute the action corresponding to the signal produced. 
 $k_g$ represents a stiffness parameter of the equation, the greater the value of $k_g$ the more the participant will rapidly vary its signal towards the final value of the equation. 
-$f(m,\gamma)$ is a function that defines the attractor of the system. According to the sensorimotor coupling hypothesis (see section \ref{backgd}), the modulation of each signal is directly influenced by the motivation of the agent, $m$, and the accumulation value $\gamma$ provided by the perceptual decision-making component of our model.
+$f(m,\gamma)$ is a function that defines the attractor of the system. As presented at the end of section \ref{backgd}, the modulation of each signal is directly influenced by the motivation of the agent, $m$, and the accumulation value $\gamma$ provided by the perceptual decision-making component of our model.
 
 %As an example showing how these equations are used to modulate the signals of the agent, 
 \paragraph{Illustrative simulation S2.} Let's consider an agent currently being the speaker and modulating two prosodic signals ($v$ = loudness, $p$ = pitch) and its gaze direction, $g$. 
@@ -271,7 +269,7 @@ Notice that setting $f_p = f_v$ is an approximation that makes the two signals t
 
 Because our approach assumes the sensory-motor coupling of the two interacting agents, we have here to simulate the dynamic of its partner's behavior, as perceived by the agent.
 For the sake of simplicity, we simulated the dynamic of the perceptual decision making using the following equation: $\gamma(t)=1-2e^{-t}$. 
-It means that in the our simulated scenario, at the beginning the agent was certain that the listener is not claiming the turn ($\gamma(0) = -1$) and that the agent was rapidly accumulating some cues in the current listener's behavior indicating the willingness of the listener to take the turn. 
+It means that in our simulated scenario, at the beginning the agent was certain that the listener is not claiming the turn ($\gamma(0) = -1$) and that the agent was rapidly accumulating some cues in the current listener's behavior indicating the willingness of the listener to take the turn. 
 
 %Based on these equations, 
 Figure \ref{demo_simu_l1} shows how the agent varied its prosodic signals when it was strongly motivated to keep on speaking ($m=1$).
@@ -287,7 +285,7 @@ Accordingly, the theoretical loudness and pitch of the agent raised to their max
   \label{demo_simu_l1}
 \end{figure}
 
-To illustrate how the agent's motivation impacts the dynamics of the signal production, we simulated the same scenario but with a speaker motivated to yield the turn ($m(t)=1$). As illustrated on Figure \ref{demo_simu}, in this case, $f_v$ and $f_p$ both decreased towards $0$, leading to a variation of the theoretical loudness and pitch towards $0$, illustrating a situation where the agent yielded the turn as it also perceived that the listener was taking the turn. 
+To illustrate how the agent's motivation impacts the dynamics of the signal production, we simulated the same scenario but with a speaker motivated to yield the turn ($m=1$). As illustrated on Figure \ref{demo_simu}, in this case, $f_v$ and $f_p$ both decreased towards $0$, leading to a variation of the theoretical loudness and pitch towards $0$, illustrating a situation where the agent yielded the turn as it also perceived that the listener was taking the turn. 
 
 \begin{figure}
   \centering
