@@ -6,10 +6,9 @@
 \label{social_psychology}
 
 One of the most noticeable properties of turn-taking in human conversation is that participants often exchange turns
-smoothly \citep{heldner_pauses_2010}, the duration of silence between two turns
-lasting few hundreds of milliseconds. 
+smoothly \citep{heldner_pauses_2010}, the duration of silence between two turns lasting few hundreds of milliseconds. 
 It should be noticed that this principle
-%of smooth exchange of speaking turns 
+%of smooth exchange of speaking turns
 varies across cultures, languages and types of conversation \citep{oconnell_turntaking_2008,stivers_universals_2009}.
 However, the principle applies to French conversations \citep{mondada_multimodal_2007}, 
 which is the type of conversation towards which our model applies.
@@ -18,39 +17,32 @@ The smoothness of the conversation still questions researchers interested in the
 %To explain how human participants in conversations are able to coordinate smoothly their speaking turns, 
 and several models have been elaborated. %In the next section we review these different models.
  
-%\subsection{How human participants exchange turns ?}
-%\label{social_psychology}
-
-Sacks et al. \citep{sacks_simplest_1974} propose the most well known model explaining how participants coordinate their speaking turns.
+Sacks et al. \citep{sacks_simplest_1974} proposed the most widely known model explaining how participants coordinate their speaking turns.
 They consider that it exists a coordination mechanism that permits the smooth transitions observed during conversations.
-More precisely, speaking turns are composed of Turn Constructional Units (TCU): groups of words or several sentences that the listener, the participant that do not have the turn (o n the contrary the speaker is the owner of a turn) perceives and uses to precisely identify moments appropriate to initiate a turn transition, moments known as Transition Relevant Places (TRP).
+More precisely, speaking turns are composed of Turn Constructional Units (TCU): groups of words or several sentences that the listener, the participant that do not have the turn (on the contrary the speaker is the owner of a turn), perceives and uses to precisely identify moments appropriate to initiate a turn transition, moments known as Transition Relevant Places (TRP).
 
 For Sacks et al. \citep{sacks_simplest_1974}, at these TRP, any deviation of this set of rules is considered
-as a violation of the turn-taking system, and a
-repair mechanism should be applied to resolve this situation.
-Such violations of the turn-taking mechanism
-encompass listeners that try to take the turn outside a
+as a violation of the turn-taking system, and a repair mechanism should be applied to resolve this situation.
+Such violations of the turn-taking mechanism encompass listeners that try to take the turn outside a
 TRP leading to competitive overlaps \citep{schegloff_overlapping_2000}.
 This first approach is based on the assumption that
 listeners are able to predict precisely the current speaker's end of turn, based on the multimodal behavior
 of the latter \citep{de_ruiter_projecting_2006,french_turn-competitive_1983,ford_interactional_1996,mondada_multimodal_2007}. 
 
 While being the most widely used and cited approach, other competing approaches have challenged the model elaborated by Sacks et al. \citep{sacks_simplest_1974}.
-As an alternative to the prediction approach, the Signal Reaction Approach, initiated by Duncan \citep{duncan_signals_1972} does not follow this assumption of prediction made by Sacks et al., nor assumes
-the existence of the rules system at TRP. 
-The authors following this approach consider that the coordination of speaking turns is mainly
-the result of a negotiation process where both the speaker
-and the listener actively act towards taking the turn.
+As an alternative to the prediction approach, the Signal Reaction Approach, initiated by Duncan \citep{duncan_signals_1972} does not follow this assumption of prediction made by Sacks et al., nor assumes the existence of the rules system at TRP. 
+The authors following this approach consider that the coordination of speaking turns is mainly the result of a negotiation process where both the speaker and the listener actively act towards taking the turn.
 
-More precisely, participants can perform the following actions to ensure the coordination of speaking turns, according to \citep{bunt_dimensions_2006}  : \begin{itemize}
-	\item take the turn : the current listener seizes a turn that is available,
-	\item grab the turn or interrupt : the current listener tries to seize a turn that is not available,
-	\item keep the turn : the current speaker signifies its willingness to continue speaking, in the case of a pause or a listener trying to grab the turn,
-	\item release the turn : the current speaker makes the turn available to the current listener.
+More precisely, participants can perform the following actions to ensure the coordination of speaking turns, according to \citep{bunt_dimensions_2006}:
+\begin{itemize}
+\item take the turn: the current listener seizes a turn that is available,
+\item grab the turn or interrupt: the current listener tries to seize a turn that is not available,
+\item keep the turn: the current speaker signifies its willingness to continue speaking, in the case of a pause or a listener trying to grab the turn,
+\item release the turn: the current speaker makes the turn available to the current listener.
 \end{itemize}
 
 According to Duncan, in order to coordinate, participants exchange verbal and nonverbal signals that inform the different actions they undertake towards the coordination of speaking turns. 
-Several turn-releasing, turn taking, turn-grabbing and turn keeping signals have been identified since the seminal article from Duncan \citep{duncan_signals_1972}. These signals encompass for example variations in prosody \citep{duncan_signals_1972,gravano_turn-taking_2011,hjalmarsson_additive_2011}, gesture \citep{duncan_signals_1972,mondada_multimodal_2007}, gaze \citep{kendon_functions_1967,novick_coordinating_1996,oertel_gaze_2013} and vocal patterns 
+Several turn-releasing, turn-taking, turn-grabbing and turn keeping signals have been identified since the seminal article from Duncan \citep{duncan_signals_1972}. These signals encompass, for instance, variations in prosody \citep{duncan_signals_1972,gravano_turn-taking_2011,hjalmarsson_additive_2011}, gesture \citep{duncan_signals_1972,mondada_multimodal_2007}, gaze \citep{kendon_functions_1967,novick_coordinating_1996,oertel_gaze_2013} and vocal patterns 
 such as fillers \citep{benus_pragmatic_2011} and inbreath \citep{torreira_breathing_2015}.  
 
 Recent work in psychology have criticized
@@ -101,8 +93,7 @@ the current speaker and the next speaker.
 The main goal of computational models of turn-taking for user-agent interaction is to satisfy the strict sequencing of speaking turns between users and agents, mostly in
 dyadic settings, by accurately detecting when the user has finished to speak while differentiating pauses from ends of turn. Accurately recognizing user's ends of turn
 will decrease the involuntary overlaps of the agent linked to bad perceptions of the user's end of turns and will make silence durations between the user's end of turn and the agent's beginning of turn as short as observed
-in human conversations \citep{balentine_debouncing_1997,ward_root_2005,raux_optimizing_2012,
-jonsdottir_distributed_2013}.
+in human conversations \citep{balentine_debouncing_1997,ward_root_2005,raux_optimizing_2012,jonsdottir_distributed_2013}.
 
 The simplest approaches use fixed temporal threshold to determinate if a silence can be considered as the end of the user's turn. These approaches were proven to be inefficient, decreasing the
 smoothness of interaction between user and agent \citep{ward_root_2005}. To
