@@ -1,6 +1,8 @@
 \section{Implementation of the model}
 \label{impl}
 
+% Expliquer BMLA (au moins faire référence au fait que c'est une extension)
+
 \subsection{Requirements}
 
 %We want an agent able to coordinate its turn in real-time with the user in a real dialogue scenario. In this kind of interaction, 
@@ -93,7 +95,7 @@ Figure \ref{impl_modules} illustrates how the different submodules are implement
 According to our model, the agent is continuously collecting information about the user's behavior. This is done by submodules of the Sensing Module, referred by (1) in figure \ref{impl_modules}. Two submodules are currently implemented, the Loudness and Pitch submodules that gather in real-time the loudness and pitch of the current user. 
 
 This information is a set of characteristics computed in real-time from the data the agent is able to sense, which is used to compute the accumulation rate $\alpha(t)$. 
-Each partial accumulation function $\alpha_j(t)$ is evaluated in a separate submodule (modules referred by the number (2) in figure \ref{impl_modules}). The values computed by these modules are then summed by a dedicated perceptor ((3) in figure \ref{impl_modules}), according to Equation \ref{alpha_func} and intergated by a last submodule ((4) in figure \ref{impl_modules} that computes the final accumulation value $\gamma$ according to Equation \ref{perc_int}). The final accumulation value is then transmitted to both the Behavior Planner and the Function Interpreter. In the Function Interpreter, is implemented a submodule evaluating the resulting accumulation value $\gamma$ and in charge of changing the agent's current state (speaker or listener) when $\gamma$ has crossed the positive threshold $\theta_{\gamma}^{+}$. As we define different set of equations depending whether the agent is the current speaker or the current listener in our model (see section \ref{mod_pres} and \ref{mod_analysis}), the agent have different set of modules for the perception of the user's behavior and control of prosodic actions. Thus when the agent has changed state, the set of perception and control modules associated with its previous state are deactivated and the set of perception and control modules associated with its next state are activated. 
+Each partial accumulation function $\alpha_j(t)$ is evaluated in a separate submodule (modules referred by the number (2) in figure \ref{impl_modules}). The values computed by these modules are then summed by a dedicated perceptor ((3) in figure \ref{impl_modules}), according to Equation \ref{alpha_func} and integrated by a last submodule ((4) in figure \ref{impl_modules}) which computes the final accumulation value $\gamma$ according to Equation \ref{perc_int}). The final accumulation value is then transmitted to both the Behavior Planner and the Function Interpreter. In the Function Interpreter, is implemented a submodule ((5) in figure \ref{impl_modules}) evaluating the resulting accumulation value $\gamma$ and in charge of changing the agent's current state (speaker or listener) when $\gamma$ has crossed the positive threshold $\theta_{\gamma}^{+}$. As we define different set of equations depending whether the agent is the current speaker or the current listener in our model (see section \ref{mod_pres} and \ref{mod_analysis}), the agent have different set of modules for the perception of the user's behavior and control of prosodic actions. Thus when the agent has changed state, the set of perception and control modules associated with its previous state are deactivated and the set of perception and control modules associated with its next state are activated. 
 
 %Each signal the agent can perceived is  % produces a certain behavioral pattern that the agent has to discriminate. In this sense, 
 %the user behavior perception component of our model should be implemented in the behavior interpretation module. We separate the user behavior perception component into several independant submodules. First, several submodules compute the partial accumulation rate for each signal produced by the user. These partial accumulation rates are then used by a submodule computing the global accumulation rate ($\alpha(t)$ variable in the model). This global accumulation rate is then used by the submodule in charge of updating the accumulation value according to the equation \ref{perc_int}. 
@@ -101,8 +103,8 @@ Each partial accumulation function $\alpha_j(t)$ is evaluated in a separate subm
 
 \subsubsection{Modulation of the prosodic signals}
 
-The corresponding components are implemented in the Behavior Planner ((7) in figure \ref{impl_modules}). In each of these modules are implemented specific equations controlling the modulation of one particular signal according, following the general shape of Equation \ref{signal_control}. Each action decider has two inputs: the motivation $m(t)$ to change role, coming from the Intent Planner and the accumulation value $\alpha(t)$, coming from the Behavior Interpreter. 
-Once computed the pitch and loudness values, the deciders send these values to the action scheduler that is in charge to transform these command into BML command that are then sent to the Realizers. 
+The corresponding components are implemented in the Behavior Planner ((6) in figure \ref{impl_modules}). In each of these modules are implemented specific equations controlling the modulation of one particular signal according, following the general shape of Equation \ref{signal_control}. Each action decider has two inputs: the motivation $m(t)$ to change role, coming from the Intent Planner and the accumulation value $\alpha(t)$, coming from the Behavior Interpreter. 
+Once computed the pitch and loudness values, the deciders send these values to the action scheduler ((7) in figure \ref{impl_modules}) which is in charge to transform these command into BMLA command (an extension of BML) that are then sent to the Realizers. 
 %Each signal control equation is implemented in a particular action decider, for an agent managing the pitch and loudness variations of the agent, we would have then two different deciders, one for the pitch and one for the loudness. 
 %The fact that the agent can 
 In our current implementation, two deciders are currently implemented, one for pitch modulation and one for loudness modulation. 
@@ -112,15 +114,15 @@ The choice of independently control the different signals may seem inconsistent 
 
 \subsubsection{Management of the motivation}
 
-The motivation to speak, or to listen, may come from different factors. If the agent is finishing its utterance and has nothing more to say its motivation to be the listener will be positive. Otherwise, its motivation will be negative. The strength of this motivation is regulated by different processes, for instance the interpersonal attitudes of the participants \citep{ter_maat_how_2010,ravenet_conversational_2015} or the importance and nature of the contribution made by the participant \citep{cafaro_effects_2016}. As the nature of the factors influencing the motivation to speak can be different, we chose to implement its computation in an independent module of the Intent planner. This module updates over time the motivation of the agent and then sends a FML data specifying the new motivation value to the Behavior planner. 
-The action deciders generate as outputs action commands specifying the control parameters of the agent's signals. Then, these commands are sent to the action scheduler that updates the motor commands of the agent and then sends the modifications to the corresponding realizers.
+The motivation to speak, or to listen, may come from different factors. If the agent is finishing its utterance and has nothing more to say its motivation to be the listener will be positive. Otherwise, its motivation will be negative. The strength of this motivation is regulated by different processes, for instance the interpersonal attitudes of the participants \citep{ter_maat_how_2010,ravenet_conversational_2015} or the importance and nature of the contribution made by the participant \citep{cafaro_effects_2016}. As the nature of the factors influencing the motivation to speak can be different, we chose to implement its computation in an independent module of the Intent planner ((8) in figure \ref{impl_modules}). This module updates over time the motivation of the agent and then sends a FML data specifying the new motivation value to the Behavior planner. 
+
 
 \subsubsection{Verbal production}
 
-In addition to the submodules implementing our turn-taking model, we added submodules dedicated to the interpretation of the user's utterances ((10) in figure \ref{impl_modules}) in the function interpretation module and to the generation of utterances ((11) in figure \ref{impl_modules}) in the Intent planner. 
+In addition to the submodules implementing our turn-taking model, we added submodules dedicated to the interpretation of the user's utterances. 
 User's utterance is first perceived incrementally by the Speech Recognition Module ((9) in figure \ref{impl_modules}) and then  transmitted to the Natural Language Understanding module ((10) in figure \ref{impl_modules}) that maps the user's utterance with a semantic value. This semantic value is then transmitted to the Utterance Planner ((11) in figure \ref{impl_modules}) that determine, according to this semantic value, the next utterance the agent will pronounce.  
-Once the utterance is generated, it is sent to a specific submodule of the Behavior planner ((12) in figure \ref{impl_modules}). This submodule decides to send to the Action scheduler an action command specifying the utterance to say, depending on the constraint that applies to this utterance. When the communicative intention specifies that the utterance should be produced immediately, the utterance is sent directly to the action scheduler whether or not the text to speech system (TTS) is currently producing an utterance. As a result, when the realizer receives the utterance, it cancels the previous utterance and send the new utterance to the TTS. On the contrary, when the communicative intention specifies that the utterance should be generated after the current one, the decider waits until the realizer sends a feedback specifying that it has completed the production of the utterance.
-When the realizer receives then command specifying the generation of an utterance, it verifies the loudness and pitch values sent by the action scheduler. When the loudness value is greater than a threshold, it transmits the utterance to the TTS system. Each time the realizer receives new commands specifying the loudness and pitch values, it sends the new values to the TTS that modulates the prosody of the utterance being currently generated. When loudness value received by the realizer becomes lesser than a threshold, the realizer decides to pause the ongoing utterance production.
+Once the utterance is generated, it is sent to a specific submodule of the Behavior planner ((12) in figure \ref{impl_modules}). This submodule decides to send to the Action scheduler an action command specifying the utterance to say, depending on the constraint that applies to this utterance. When the communicative intention specifies that the utterance should be produced immediately, the utterance is sent directly to the action scheduler whether or not the text to speech system (TTS) is currently producing an utterance. As a result, when the speech realizer ((13) in figure \ref{impl_modules}) receives the utterance, it cancels the previous utterance and send the new utterance to the TTS. On the contrary, when the communicative intention specifies that the utterance should be generated after the current one, the decider waits until the realizer sends a feedback specifying that it has completed the production of the utterance.
+As soon as the speech realizer ((13) in figure \ref{impl_modules}) receives then command specifying the generation of an utterance, it verifies the loudness and pitch values sent by the action scheduler. When the loudness value is greater than a threshold, it transmits the utterance to the TTS system. Each time the realizer receives new commands specifying the loudness and pitch values, it sends the new values to the TTS that modulates the prosody of the utterance being currently generated. When loudness value received by the realizer becomes lesser than a threshold, the realizer decides to pause the ongoing utterance production.
 
 \subsubsection{Technical choices}
 
@@ -151,28 +153,28 @@ Contrarily, Figure \ref{sc_2} shows what happened when the agent had a weak moti
 
 \begin{figure}
   \centering
-  \includegraphics[width=\linewidth]{figure/volume_transcript_1_1.png}
-  \caption{Illustration of the first interaction. The user tries here to barge-in the agent, the latter does not let the turn to the user.}
+  \includegraphics[width=\linewidth]{figure/volume_transcript_1_1_refait.eps}
+  \caption{Illustration of the first interaction. The user tries to grab the turn, the agent raises its voice to prevent the user to interrupt then continues its turns after the user stops.}
   \label{sc_1}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{figure/volume_transcript_1_2.png}
-\caption{Illustration of a scenario where the agent interrupts itself in response to the user barge-in.}
+\includegraphics[width=\linewidth]{figure/volume_transcript_1_2_refait.eps}
+\caption{Illustration of a scenario where the agent stops in response to the user barge-in.}
 \label{sc_2}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{figure/volume_transcript_2_2.png}
+\includegraphics[width=\linewidth]{figure/volume_transcript_2_2_refait.eps}
 \caption{Illustration of a scenario where the agent waits the end of turn of the user even if it has understood was the latter was saying.}
 \label{sc_3}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[width=\linewidth]{figure/volume_transcript_2_1.png}
+\includegraphics[width=\linewidth]{figure/volume_transcript_2_1_refait.eps}
 \caption{Illustration of a scenario where the agent interrupts the user as soon as it has understood was the user was saying.}
 \label{sc_4}
 \end{figure}
