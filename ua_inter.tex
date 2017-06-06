@@ -12,11 +12,6 @@ In this evaluation we had three research questions.  \begin{enumerate}
 	\item Is an agent varying its turn-taking behavior according to our model improve judgements about the agent's credibility, user's satisfaction and easiness to interact with the agent?
 \end{enumerate}
 
-% 1 : évaluer la capacité d'un agent conversationnel contrôlé par notre modèle de gestion des tours de parole à coordonner ses tours de parole avec l'utilisateur. Plus particulièrement, nous nous concentrons sur la capacité de l'agent à identifier correctement les fins de tour de l'utilisateur et à prendre le tour en respectant les durées de transitions observées dans les interactions humaines
-% 3 : évaluer 
-% 2 : évaluer l'effet d'un agent variant ses comportements de tour de parole sur sa crédibilité, l'engagement de l'utilisateur 
-
-
 % of the interaction, especially regarding their comfort level interacting with the agent, or the credibility of the latter. 
 %We also wanted to assess how users judged the ability of the agent to take into account the behavior of its partner.
 To that purpose we chose to inspire from existing evaluations.
@@ -56,9 +51,9 @@ We wanted to ensure that the user interacted equally with the agent having respe
 As a result, we had two main conditions, a first conditions where the user interacted with an agent controlled by our model M1 (condition 1) and a second condition where the user interacted with an agent controlked by our model M2 (condition 2). We chose to name the first part of the condition 1, when the user interacted with an agent having a weak motivation to keep and take the turn ``condition 1 weak", and the second part of the condition 1, when the user interacted with an agent having a weak motivation to keep and take the turn ``condition 1 strong". 
 Each participant interacted twice with the agent, each time with a different condition and according to the same scenario. For each condition, the interaction lasted 2 min 30 s. 
 
-Finally, at the end of each interaction, a questionnaire was proposed to the participant, with questions about the satisfaction to interact with the agent, the ease with wich the participant interacted with the agent. The corresponding questions were adapted from\cite{skantze_towards_2010}, \cite{bevacqua_effects_2014} and \cite{de_vault_toward_2015}. Moreover, in order to assess the clarity of the agent's signals, we added questions about the intentionality of agent's interruptions that is whether interruptions of the agent were due to an agent mistakenly perceiving the end of turn of the user or where made by the agent on purpose. 
-For each items, the participant had to declare its level of agreement, between strongly disagree and strongly agree in a continuous scale between 0 à 10. The different items were inspired from \cite{skantze_towards_2010}, \cite{bevacqua_effects_2014} and \cite{de_vault_toward_2015}.
+Finally, at the end of each interaction, a questionnaire, presented table \ref{Answers}, was proposed to the participant, with questions about the easiness to interact with the agent (question Q9 in table \ref{Answers}), user's satisfaction (Q8, Q10) and agent credibility (Q11). The corresponding questions were adapted from\cite{skantze_towards_2010}, \cite{bevacqua_effects_2014} and \cite{de_vault_toward_2015}. Moreover, in order to assess the clarity of the agent's signals, we added questions about the intentionality of agent's interruptions that is whether interruptions of the agent were due to an agent mistakenly perceiving the end of turn of the user or where made by the agent on purpose (Q3, Q4). Finally, we added questions about the ability of the agent to smoothly coordinate with the user (Q1, Q2, Q6, Q7).
 
+For each items, the participant had to declare its level of agreement, between strongly disagree and strongly agree in a continuous scale between 0 à 10 The different items were inspired from \cite{skantze_towards_2010}, \cite{bevacqua_effects_2014} and \cite{de_vault_toward_2015}.
 
 
 %We used our model to implement two experimental conditions (respectively 'condition 1 weak' and 'condition 1 strong'), namely an agent with a weak motivation to speak, and an agent with a strong motivation to speak.  
@@ -79,35 +74,44 @@ For each items, the participant had to declare its level of agreement, between s
 \hline
 Questions & Median \linebreak conds. 1 & Median \linebreak cond. 2 & p-value \\
 \hline
-My interlocutor \linebreak didn't perceive the moment were I talked & 2.25 & 1.75 & 0.95\\
+Q1: My interlocutor \linebreak didn't perceive the moment were I talked & 2.25 & 1.75 & 0.95\\
 \hline
-My interlocutor took the turn randomly& 2.5 & 2.625 & 0.6 \\
+Q2: My interlocutor took the turn randomly& 2.5 & 2.625 & 0.6 \\
 \hline
-My interlocutor interrupted unvolontarily& 6 & 4 & 0.019* \\
+Q3: My interlocutor interrupted unvolontarily& 6 & 4 & 0.019* \\
 \hline
-My interlocutor interrupted me on purpose& 6 & 6.5 & 0.91 \\
+Q4: My interlocutor interrupted me on purpose& 6 & 6.5 & 0.91 \\
 \hline
-My interlocutor paid attention not to interrupt me & 4.5 & 7.5 & 0.006**\\
+Q5: My interlocutor paid attention not to interrupt me & 4.5 & 7.5 & 0.006**\\
 \hline
-My interlocutor was slow to respond to me & 3 & 2 & 0.77\\
+Q6: My interlocutor was slow to respond to me & 3 & 2 & 0.77\\
 \hline
-My interlocutor refused sometimes to speak to me & 6.125 & 5.75 & 0.16\\
+Q7: My interlocutor refused sometimes to speak to me & 6.125 & 5.75 & 0.16\\
 \hline
-My interlocutor annoyed me by the way he took the turn & 4.5 & 3.25 & 0.54\\
+Q8: My interlocutor annoyed me by the way he took the turn & 4.5 & 3.25 & 0.54\\
 \hline
-I was at ease interacting with my interlocutor & 5.25 & 6.25 & 0.55\\
+Q9: I was at ease interacting with my interlocutor & 5.25 & 6.25 & 0.55\\
 \hline
-I liked speaking with my interlocutor & 6.625 & 7 & 0.52\\
+Q10: I liked speaking with my interlocutor & 6.625 & 7 & 0.52\\
 \hline
-The behavior of my interlocutor was close to the behavior of a human speaker & 5.625 & 6.5 & 0.97\\
+Q11: The behavior of my interlocutor was close to the behavior of a human speaker & 5.625 & 6.5 & 0.97\\
 \hline
 \end{tabular}}
 \caption{Mean agreements of the participants for conditions 1 and condition 2 (translated from French).}
 \label{Answers}
 \end{table}
 
+We also analyzed several features related to turn-taking such as agent-user and user-agent transition duration, overlap durations, pitch and loudness of the user from audio transcriptions of the interaction.
+
 %In this table are translated the different assertions of the question, the mean responses of the participants, and the significance of differences in the responses between the two conditions. 
-Generally speaking, the participants liked speaking with the agent. The results of the questions related to the credbility of the agent are more mitigated, with a median value to the assertion "The behavior of my interlocutor was close to the behavior of a human speaker" of 6.5 in the second condition and 5.625 for the first condition. The users perceived that the agent paid more attention not to interrupt them (median value of 7.5) for the second condition than for the first one. Nevertheless, participants perceived also counter-intuitively that the agent interrupted them more unvolontarily in the first condition compared to the second condition, even if the degree of agreement with the assertion "My interlocutor interrupted me unvolontarily" did not strongly favorized this assertion (median of 6). 
+
+
+\subsubsection{Is an agent controlled by our turn-taking model able to coordinate smoothly its speaking turns with the user?}
+
+In order to answer this question, we both evaluated user responses on the questions Q1, Q2, Q6 and Q7, measured number of overlaps and transition durations between the conditions. We found no significant differences in the user's answers between conditions. For scores on questions Q1 and Q2, users perceived that the agent took into acount their behaviors (low mean of 2.25 for Q1 and 2.5 for Q2), coordinate smoothly with the user (Q6). One exception resides in the score of participants to the question Q7, showing that, in majority, participants perceived the presence of awkward silences in the interaction. When analyzing the agent turn-taking behavior during the interaction we compared user to agent transitions to agent to user transitions. 
+When analyzing agent behavior during the interaction we hosever 
+
+Generally speaking, the participants liked speaking with the agent. The results of the questions related to the credibility of the agent are more mitigated, with a median value to the assertion ``The behavior of my interlocutor was close to the behavior of a human speaker" of 6.5 in the second condition and 5.625 for the first condition. The users perceived that the agent paid more attention not to interrupt them (median value of 7.5) for the second condition than for the first one. Nevertheless, participants perceived also counter-intuitively that the agent interrupted them more unvolontarily in the first condition compared to the second condition, even if the degree of agreement with the assertion ``My interlocutor interrupted me unvolontarily" did not strongly favorized this assertion (median of 6). 
 The fact that the participants considered that their interlocutor interrupted them unvolontarily in the first condition raises some questions. We should notice that the number of overlaps initiated by the agent was much greater than what we expected: indeed, this number was not significantly different for the two conditions.
 
 \begin{figure}
@@ -125,9 +129,8 @@ The fact that the participants considered that their interlocutor interrupted th
 \end{figure}
 
 
-We completed the analysis of the subjective evaluations with an objective analysis of the interaction. 
 We first analyzed the duration of the transitions, distinguishing user to agent transitions from agent to user ones (Figures \ref{box_ua} and \ref{box_au}).
-For this analysis, we annotated manually the turns of the different participants and aligned the loudness profile of the participants to the annotations we made. We kept only transitions that were not overlaps and transitions that were not anticipated by the agent. We observed first a high number of mistakes in the detection of user's end of turns, whatever the condition, with almost 50 \% of transitions having at least slight overlaps.  
+ We observed first a high number of mistakes in the detection of user's end of turns, whatever the condition, with almost 50 \% of transitions having at least slight overlaps.  
 %The repartition of the user to agent transitions is shown on figure \ref{box_ua}, and the repartition of agent to user transitions is shown on the figure \ref{box_au}. 
 
 These results show that for the condition 1 the agent took the turn more rapidly (average: 840 ms) compared to the second condition (1.19 s), the difference being significant (p<0.05). The difference was also significant (p<0.05) for the agent-user transitions: in condition 1 the mean duration of silence was 1.11 s and 1.39 s for the second one. 
