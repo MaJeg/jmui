@@ -18,7 +18,8 @@ The smoothness of the conversation still questions researchers interested in the
 and several models have been elaborated. %In the next section we review these different models.
  
 Sacks et al. \citep{sacks_simplest_1974} proposed the most widely known model explaining how participants coordinate their speaking turns.
-They consider that it exists a coordination mechanism that permits the smooth transitions observed during conversations.
+%They consider that it exists a coordination mechanism that permits the smooth transitions observed during conversations.
+They consider that a set of rules ensures the coordination of turns, enabling the smooth transitions observed during conversations.
 More precisely, speaking turns are composed of Turn Constructional Units (TCU): groups of words or several sentences that the listener, the participant that do not have the turn (on the contrary the speaker is the owner of a turn), perceives and uses to precisely identify moments appropriate to initiate a turn transition, moments known as Transition Relevant Places (TRP).
 
 For Sacks et al. \citep{sacks_simplest_1974}, at these TRP, any deviation of this set of rules is considered
@@ -29,11 +30,11 @@ This first approach is based on the assumption that
 listeners are able to predict precisely the current speaker's end of turn, based on the multimodal behavior
 of the latter \citep{de_ruiter_projecting_2006,french_turn-competitive_1983,ford_interactional_1996,mondada_multimodal_2007}. 
 
-While being the most widely used and cited approach, other competing approaches have challenged the model elaborated by Sacks et al. \citep{sacks_simplest_1974}.
+While being the most widely used and cited approach, other approaches have challenged the model elaborated by Sacks et al. \citep{sacks_simplest_1974}.
 As an alternative to the prediction approach, the Signal Reaction Approach, initiated by Duncan \citep{duncan_signals_1972} does not follow this assumption of prediction made by Sacks et al., nor assumes the existence of the rules system at TRP. 
 The authors following this approach consider that the coordination of speaking turns is mainly the result of a negotiation process where both the speaker and the listener actively act towards taking the turn.
 
-More precisely, participants can perform the following actions to ensure the coordination of speaking turns, according to \citep{bunt_dimensions_2006}:
+More precisely, according to \citep{bunt_dimensions_2006}, participants can perform the following actions to ensure the coordination of speaking turns: 
 \begin{itemize}
 \item take the turn: the current listener seizes a turn that is available,
 \item grab the turn or interrupt: the current listener tries to seize a turn that is not available,
@@ -46,7 +47,7 @@ Several turn-releasing, turn-taking, turn-grabbing and turn keeping signals have
 such as fillers \citep{benus_pragmatic_2011} and inbreath \citep{torreira_breathing_2015}.  
 
 Recent work in psychology have criticized
-the assumption of the two preceding approaches, claiming that turn-taking is an affair of ``rights" and ``obligations". O'Connell et al.\citep{oconnell_turn-taking_1990} argued that `` the ultimate criterion for success in conversation is not the smooth interchange of speaking
+the assumption of the two preceding approaches, claiming that turn-taking is an affair of ``rights'' and ``obligations''. O'Connell et al.\citep{oconnell_turn-taking_1990} argued that ``the ultimate criterion for success in conversation is not the smooth interchange of speaking
 turns [...] but the fulfillment of the purpose entertained
 by participants". According to their view, turn-taking
 does not exist per se as an independent procedure deliberately
@@ -61,8 +62,8 @@ interrupt the user if it has something important to say,
 or letting on purpose a certain amount of silence before
 taking the turn, would not degrade the interaction, but,
 if it is made coherently with the dialog context would, on the
-opposite, enriches the interaction. This view has been
-supported by recent studies made by \citep{ter_maat_how_2010} and \citep{cafaro_effects_2016} measuring
+opposite, enrich the interaction. This view has been
+supported by recent studies made by \citep{ter_maat_how_2010} and \citep{cafaro_effects_2016}, measuring
 the effects of different turn-taking behaviors (referred as ``strategies") on
 the user's perception of the agent.
 ter Maat et al.\citep{ter_maat_how_2010} showed that varying the response time of the agent following the end of user's turn gave different impressions about the personality and the attitude of the agent towards the user, an agent starting systematically a few hundred milliseconds before the end of the user's turn being perceived as more dominant and assertive, contrarily an agent taking the turn seconds after the end of the user's turn being less assertive and more submissive.  
@@ -75,7 +76,7 @@ agent, influenced the user's perception about the interpersonal
 attitudes of the participants.
  
 Previous studies showed the existence of turn-taking signals, but did not observe the dynamics of such signals.
-Some authors specifically studied the dynamics of turn-taking signals and showed participants continuously adapted their turn-taking signals to the other participant leading to think that a continuous sensorimotor coupling (for a definition of sensorimotor coupling see \citep{warren_dynamics_2006}).
+Some authors specifically studied the dynamics of turn-taking signals and showed participants continuously adapted their turn-taking signals to the other participant leading to think that a continuous sensorimotor coupling occurred (for a definition of sensorimotor coupling see \citep{warren_dynamics_2006}).
 For instance,  Levitan et al. \citep{levitan_entrainment_2015} observed some
 alignment effects in the amount of silence before participants
 take the turn, and showed that the pitch level of
@@ -83,9 +84,7 @@ the next speaker at the beginning of the turn tended to
 be similar to the prosody level of the previous speaker
 at the end of his turn. 
 Alignment effects are also observed in respiratory patterns close to the current speaker's end of turn \citep{mcfarland_respiratory_2001}.
-Finally, Wilson and Zimmerman\citep{wilson_structure_1986} for English and Bailly et al. \citep{bailly_pauses_2012} for French conversations, observed that inter-turns transitions were not randomly distributed but were multiple of a unit of time. According to \citep{wilson_oscillator_2005} this could be explained by an alignment in the cycle of pronunciation of syllables between
-the current speaker and the next speaker.
-
+Finally, Wilson and Zimmerman \citep{wilson_structure_1986} for English and Bailly et al. \citep{bailly_pauses_2012} for French conversations, observed that inter-turns transitions were not randomly distributed but were multiple of a unit of time. According to \citep{wilson_oscillator_2005} this could be explained by an alignment in the cycle of pronunciation of syllables between the current speaker and the next speaker.
 
 \subsection{Computational models of turn-taking for embodied conversational agents}
 \label{comp_modelling}
@@ -95,12 +94,11 @@ dyadic settings, by accurately detecting when the user has finished to speak whi
 will decrease the involuntary overlaps of the agent linked to bad perceptions of the user's end of turns and will make silence durations between the user's end of turn and the agent's beginning of turn as short as observed
 in human conversations \citep{balentine_debouncing_1997,ward_root_2005,raux_optimizing_2012,jonsdottir_distributed_2013}.
 
-The simplest approaches use fixed temporal threshold to determinate if a silence can be considered as the end of the user's turn. These approaches were proven to be inefficient, decreasing the
-smoothness of interaction between user and agent \citep{ward_root_2005}. To
-overcome these limitations, some authors used a mechanism
-of dynamic threshold for the agent to adapt to the
+The simplest approaches use fixed temporal threshold to determinate whether a silence can be considered as the end of the user's turn or a pause. 
+These approaches were proven to be inefficient, decreasing the smoothness of interaction between user and agent \citep{ward_root_2005}. 
+To overcome these limitations, some authors used a mechanism of dynamic threshold for the agent to adapt to the
 situation and to the user \citep{bohus_decisions_2011,witt_modeling_2014}. In order to improve the recognition accuracy of the different user's actions linked to turn-taking (turn-releasing, keeping, taking, grabbing), authors, following the Signal Reaction Approach \citep{duncan_signals_1972}, tried to perceive different signals displayed by the user to inform his current behavior linked to turn-taking.   
-This encompass rule-based systems \citep{cassell_embodiment_1999,thorisson_natural_2002}, and probabilistic
+This encompasses rule-based systems \citep{cassell_embodiment_1999,thorisson_natural_2002}, and probabilistic
 models that use either a decision theoretic approach \citep{bohus_decisions_2011,raux_optimizing_2012}, offline machine learning on transcriptions of human conversations \citep{schlangen_reaction_2006,huang_multimodal_2011} or realtime reinforcement learning \citep{jonsdottir_distributed_2013} to accurately detect the user's end of turns while discriminating ends of turn from simple pauses made by the user. 
 
 Contrarily, very few models adopted Sacks et al.'s view that ends of turn are primarily projected. \citep{de_vault_incremental_2011} created a model dedicated to the prediction of the meaning of the user's utterance that could serve in real-time to generate interruptions, or to take the turn without virtually no gap and no overlap.
@@ -116,13 +114,10 @@ dialog system could reliably distinguish barge-in
 attempts from cooperative feedbacks or speech not intended
 to the system. This was either done by analyzing the results of an incremental speech recognizer \citep{selfridge_continuously_2013}, by estimating the probability of a user starting to speak at one moment in the interaction \citep{witt_modeling_2014} or used a classifier to use prosodic, temporal and verbal features to distinguish between user competitive overlaps and listener responses \citep{reidsma_continuous_2011}. Finally, Paek et al. \citep{paek_continuous_2000} used gaze to infer whether the user's utterance is addressed to the system or not. 
 
-% ----
-
 Several authors designed agents that produced turn-taking signals to clarify their intentions related to turn-taking. In multi-party conversations between users and virtual agents or robots, several approaches have shown the effectiveness of controlling the agent's gaze behavior to select the future speaker \citep{mutlu_storytelling_2006,bohus_facilitating_2010,al_moubayed_regulating_2015}. In dyadic settings, \citep{skantze_turn-taking_2014} showed that an agent averting its gaze when pausing (but not releasing its turn) helped the user to identify the agent's turn-taking behavior.
 
 The models presented above are essentially dedicated to the detection of the user's behavior in order to reduce moments of silence and overlaps, thus improving the quality of the interaction. 
-They partly rely on the initial assumptions made by researchers 
-that interrupting or not taking the turn after the user's end of turn 
+They partly rely on the initial assumptions that interrupting or not taking the turn after the user's end of turn 
 is a violation of the turn-taking system, and could lead to a ``break
 down" in the conversation \citep{cutler_analysis_1986}. 
 Thus in user-agent interactions, 
@@ -140,7 +135,7 @@ of the utterance they had to say. To evaluate whether they
 will take the turn or not, the agents evaluated in parallel
 the importance of the utterance they have or they are saying
 and the turn-holding or turn-taking cues displayed to
-judge whether to take the turn or keep the turn. Lessman et al. \citep{lessmann_towards_2004}and Thorisson et al. \citep{thorisson_multiparty_2010}
+judge whether to take the turn or keep the turn. Le{\ss}mann et al. \citep{lessmann_towards_2004} and Thorisson et al. \citep{thorisson_multiparty_2010}
 used both similar notions of ``intention to speak" \citep{lessmann_towards_2004} or
 ``urgency to speak" to drive the behavior of their agent
 \citep{thorisson_multiparty_2010}. Ravenet et al. \citep{ravenet_conversational_2015} created a model where the participants varied
@@ -149,18 +144,18 @@ attitudes. In order to have a richer and more
 natural turn-taking, these models show the importance
 of taking into account factors related to personality,
 interpersonal attitude, emotion and the content of the
-conversation in the production of the agent's behavior. 
+conversation in the control of the agent's behavior. 
 
 \subsection{Positioning}
 
 The approaches presented above are first steps towards improving the coordination of speaking turns between users and agents. Accurately detecting the behavior of the user is a first step towards improving the coordination of speaking turns. More complex approaches allow the agent to vary its behavior by applying "turn-taking strategies" \citep{ter_maat_how_2010} to display attitudes of dominance or power towards the user \citep{ravenet_conversational_2015,cafaro_effects_2016}. %, vary urgency to speak \citep{selfridge_bidding_2009}.
 
-These approaches share common characteristics. Once reached a high degree of certainty about the partner's behavior, agents make punctual decisions about the current behavior to trigger (either taking, releasing, grabbing, keeping the turn) and do not often revise their decision.
-On the contrary, participants in human interactions continuously perceive and react to their partner's behavior \citep{clancy_co-constructed_2015}. Indeed, participants continuously adapt their signals production to the behavior of their partner and their final behaviors (either the speaker stops or continues to speak, either the listener takes the turn or not) cannot be planned in advance. For example, the current speaker trying to keep the turn can display signals showing the current listener that he wants to keep the turn, then deciding to raise its voice, increasing his speech rate, constantly repeating the last syllable as shown by Schegloff \citep{schegloff_overlapping_2000}. These behaviors are however not planned in advance but are continuously dependent of what the listener is doing: if the listener show insistance in trying to take the turn, the current speaker can choose to insist more and more to keep the turn (for example rising more and more its voice to try to prevent the current listener to take the turn) and then, as the overlap lasts, the current speaker can finally interrupt herself to let the current listener taking the turn \citep{schegloff_overlapping_2000}.  
-A similar observation can be made for the listener engaged in a conflict for grabbing the turn: he can amplify his turn-grabbing signals and finally give up its turn-grabbing attempt.
- Behaviors of the participants are then highly dynamic, continuously evolving through the interaction, and directly dependent to the signals production of their partner. In that sense, turn-taking behaviors can't be entirely determined by the agent, but is a result of an initial goal (taking, yielding, keeping the turn), and a continuous adaptation to the partner's actions. Existing models lack explaining how participants can smoothly coordinate their turn by continuously adapting to their partner's signals.  
+These approaches share common characteristics. On\-ce reached a high degree of certainty about the partner's behavior, agents make punctual decisions about the current behavior to trigger (either taking, releasing, grabbing, keeping the turn) and do not often revise their decision.
+On the contrary, participants in human interactions continuously perceive and react to their partner's behavior \citep{clancy_co-constructed_2015}. Indeed, participants continuously adapt their signals production to the behavior of their partner and their final behaviors (either the speaker stops or continues to speak, either the listener takes the turn or not) cannot be planned in advance. For example, the current speaker trying to keep the turn can display signals showing the current listener that he wants to keep the turn, then deciding to raise its voice, increasing his speech rate, constantly repeating the last syllable as shown by Schegloff \citep{schegloff_overlapping_2000}. These behaviors are continuously dependent of what the listener is doing: if the listener insists in trying to take the turn, the current speaker can choose to insist more and more to keep the turn (for instance rising more and more its voice to try to prevent the current listener to take the turn) and then, as the overlap lasts, the speaker can finally interrupt himself to let the listener taking the turn \citep{schegloff_overlapping_2000}.  
+A similar observation can be made for the listener engaged in a conflict for grabbing the turn: he can amplify his turn-grabbing signals and finally gives up its turn-grabbing attempt.
+ Behaviors of the participants are then highly dynamic, continuously evolving through the interaction, and directly dependent to the signals production of their partner. In this sense, turn-taking behaviors cannot be entirely determined by the agent, but is a result of an initial goal (taking, yielding, keeping the turn), and a continuous adaptation to the partner's actions. Existing models lack to explain how participants can smoothly coordinate their turn by continuously adapting to their partner's signals.  
  
-Moreover, as observed by \cite{thorisson_natural_2002}, participants coordinating their turns are under temporal constraints, they act whether or not they are completely certain about the intentions of their partners towards turn-taking, that is, whether their partners is trying to change role (from listener to speaker or conversely) or not. That can be the case for example, for a listener waiting the end of the current speaker's turn to take the turn, even if he is not completely certain about the nature of the speaker's silence (whether he is only pausing or if he has ended its turn) as the silence last, he will certainly finish by acting towards taking the turn.
+Moreover, as observed by \cite{thorisson_natural_2002}, participants coordinating their turns are under temporal constraints, they act whether or not they are completely certain about the intentions of their partners towards turn-taking, that is, whether their partners is trying to change role (from listener to speaker or conversely) or not. That can be the case for instance, for a listener waiting the end of the speaker's turn to take the turn, even if he is not completely certain about the nature of the speaker's silence (whether he is only pausing or if he has ended its turn) as the silence lasts, he will certainly finish by acting towards taking the turn.
  	
  These two characteristics, continuous adaptation to the partner's behavior and action under uncertainty, are not new in the field of embodied conversational agents. Recent works have promoted the need for agents able to incrementally perceive the user's behavior and to react to it before the end of the user's behavior. These kind of models have been applied to the management of dialog between user and agent \cite{skantze_towards_2010}, or backchannel eliciting behaviors \cite{buschmeier_when_2014}. For developing agents that are able to incrementally process and react to the user's behavior, \cite{kopp_architecture_2014} have proposed the ASAP architecture, extending the SAIBA architecture by adding ability to continuously perceive the behavior of the user an to adapt the ongoing behavior of the agent accordingly. 
  
@@ -169,9 +164,9 @@ Moreover, as observed by \cite{thorisson_natural_2002}, participants coordinatin
 \subsection{Our Model}
 
 We propose a generative model of turn-taking motivated both by cognitive psychology models and by studies
-that have measured alignment or synchrony effects without postulating the nature of the cognitive process
-behind these phenomena. This model is based on general cognitive psychology theory that describes the
-processes behind the continuous sensory-motor coupling existing between participants in interaction and that
+that measured alignment or synchrony effects without postulating the nature of the cognitive processes
+behind these phenomena. This model is based on cognitive psychology theories that describe the
+processes behind the continuous sensorimotor coupling existing between participants in interaction and that
 drive the agent's behavior.
 
 % Plusieurs travaux ont étudié le couplage continu existant entre des participants dans une interaction entre des participants humains : 
